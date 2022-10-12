@@ -69,11 +69,21 @@ h2 {
   color: #063d58;
   margin: 0px;
 }
-#celsius,
-#fahrenheit {
+
+.active,
+.active:hover {
   color: #063d58;
   text-decoration: none;
+  cursor: default;
 }
+
+.inert,
+.inert:hover {
+  color: #9abbcf;
+  text-decoration: none;
+  cursor: pointer;
+}
+
 .choosePeriod {
   display: flex;
   justify-content: center;

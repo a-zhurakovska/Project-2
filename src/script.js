@@ -47,6 +47,7 @@ function showData(response) {
   let cityCountry = document.querySelector(`#cityCountry h1`);
   cityCountry.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
 
+  celsiusTemperature = response.data.main.temp;
   let currentTemperature = document.querySelector(`#currentTemperature`);
   let currentTepm = Math.round(response.data.main.temp);
   currentTemperature.innerHTML = currentTepm;
@@ -93,3 +94,28 @@ function showGeo() {
 
 let buttonLoc = document.querySelector(`#buttonLocation`);
 buttonLoc.addEventListener("click", showGeo);
+
+function showFahrenheitTemperature(event) {
+  event.preventDefault();
+  celsius.classList.replace("active", "inert");
+  fahrenheit.classList.replace("inert", "active");
+  let convertToFarenheit = Math.round((celsiusTemperature * 9) / 5 + 32);
+  let currentTemperature = document.querySelector(`#currentTemperature`);
+  currentTemperature.innerHTML = convertToFarenheit;
+}
+
+function showCelsiusTemperature(event) {
+  event.preventDefault();
+  celsius.classList.replace("inert", "active");
+  fahrenheit.classList.replace("active", "inert");
+  let currentTemperature = document.querySelector(`#currentTemperature`);
+  currentTemperature.innerHTML = Math.round(celsiusTemperature);
+}
+
+let celsiusTemperature = null;
+
+let fahrenheit = document.querySelector(`#fahrenheit`);
+fahrenheit.addEventListener(`click`, showFahrenheitTemperature);
+
+let celsius = document.querySelector(`#celsius`);
+celsius.addEventListener(`click`, showCelsiusTemperature);
