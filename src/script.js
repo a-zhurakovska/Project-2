@@ -43,6 +43,7 @@ h2.textContent = formatDate(new Date());
 
 //1
 function showData(response) {
+  console.log(response);
   let cityCountry = document.querySelector(`#cityCountry h1`);
   cityCountry.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
 
@@ -55,6 +56,13 @@ function showData(response) {
 
   let wind = document.querySelector(`#wind`);
   wind.innerHTML = `Wind: ${response.data.wind.speed}km/h`;
+
+  let iconCurrentWeather = document.querySelector(`#currentWeatherIcon`);
+  iconCurrentWeather.setAttribute(
+    `src`,
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconCurrentWeather.setAttribute(`alt`, `response.data.weather[0].main`);
 }
 
 function cityData(event) {
