@@ -43,7 +43,7 @@ h2.textContent = formatDate(new Date());
 
 //1
 function showData(response) {
-  let cityCountry = document.querySelector(`#cityCountry`);
+  let cityCountry = document.querySelector(`#cityCountry h1`);
   cityCountry.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
 
   let currentTemperature = document.querySelector(`#currentTemperature`);
@@ -66,7 +66,7 @@ function cityData(event) {
   axios.get(apiUrl).then(showData);
 }
 
-let searchCity = document.querySelector(`#findCity`);
+let searchCity = document.querySelector(`#buttonFindCity`);
 searchCity.addEventListener("click", cityData);
 
 //bonus feature. Please, wait about 4 seconds.

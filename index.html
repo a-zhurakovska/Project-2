@@ -26,96 +26,136 @@
   </head>
   <body>
     <div class="container">
-      <form id="city">
-        <input type="text" id="search-text-input" placeholder="Search" />
-        <input type="submit" id="findCity" value="Go" />
-      </form>
-      <button id="buttonLocation" type="button">Current location</button>
-      <div class="first-line">
-        <span class="cityCountry" id="cityCountry">
-          <h1>Kyiv, Ukraine</h1>
-        </span>
-        <span class="currentTime" id="currentTime">
-          <h1>22:23</h1>
-        </span>
+      <!--  -->
+      <div class="mainCode">
+        <div class="searchingLine">
+          <form id="city">
+            <input type="text" id="search-text-input" placeholder="Search" />
+            <button type="submit" id="buttonFindCity">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </form>
+          <button class="buttonLocation" id="buttonLocation" type="button">
+            Current location
+          </button>
+        </div>
+        <!--  -->
+        <div class="currentData">
+          <div class="first-short-information">
+            <span class="cityCountry" id="cityCountry">
+              <h1>Kyiv, Ukraine</h1>
+            </span>
+            <span>
+              <h2 id="currentDay">Monday, 10 September</h2>
+            </span>
+            <span class="lastUpdatedTime">
+              <h2>
+                Last updated:
+                <strong id="currentTime"> 11:17 </strong>
+              </h2>
+            </span>
+          </div>
+          <!--  -->
+          <div class="current-weather-info">
+            <h1>
+              <span id="currentTemperature">17</span>
+              <a href="#" id="celsius">°C</a>
+              |
+              <a href="#" id="fahrenheit">°F</a>
+            </h1>
+            <h2>
+              <span id="humidity">Humidity: 51%</span>
+              <br />
+              <span id="wind">Wind: 6.55km/h</span>
+            </h2>
+          </div>
+          <div class="currentWeatherIcon">
+            <i
+              class="fa-solid fa-sun fa-8x fa-spin"
+              style="--fa-animation-duration: 15s"
+            ></i>
+          </div>
+        </div>
+        <!--  -->
+        <div class="choosePeriod">
+          <span>
+            <a href="#" id="todayWeatherData">Today</a>
+          </span>
+          <span>
+            <a href="#" id="weekWeatherData">Week</a>
+          </span>
+        </div>
+        <!--  -->
+        <div class="weatherData">
+          <div class="card-1">
+            <i
+              class="fa-solid fa-cloud-sun fa-2x fa-beat-fade"
+              style="--fa-animation-duration: 3s"
+            ></i>
+            <p class="day">TUE</p>
+            <p class="temperature">
+              <span class="dayTemperature">14</span>°C /
+              <span class="nightTemperature">18</span>°C
+            </p>
+          </div>
+          <div class="card-2">
+            <i
+              class="fa-solid fa-cloud-showers-heavy fa-beat-fade fa-2x"
+              style="--fa-animation-duration: 3s"
+            ></i>
+            <p class="day">WED</p>
+            <p class="temperature">
+              <span class="dayTemperature">14</span>°C /
+              <span class="nightTemperature">18</span>°C
+            </p>
+          </div>
+          <div class="card-3">
+            <i
+              class="fa-solid fa-cloud-sun fa-2x fa-beat-fade"
+              style="--fa-animation-duration: 3s"
+            ></i>
+            <p class="day">THU</p>
+            <p class="temperature">
+              <span class="dayTemperature">14</span>°C /
+              <span class="nightTemperature">18</span>°C
+            </p>
+          </div>
+          <div class="card-4">
+            <i
+              class="fa-solid fa-sun fa-2x fa-beat-fade fa-2x"
+              style="--fa-animation-duration: 3s"
+            ></i>
+            <p class="day">FRI</p>
+            <p class="temperature">
+              <span class="dayTemperature">14</span>°C /
+              <span class="nightTemperature">18</span>°C
+            </p>
+          </div>
+          <div class="card-5">
+            <i
+              class="fa-solid fa-sun fa-2x fa-beat-fade fa-2x"
+              style="--fa-animation-duration: 3s"
+            ></i>
+            <p class="day">SAT</p>
+            <p class="temperature">
+              <span class="dayTemperature">14</span>°C /
+              <span class="nightTemperature">18</span>°C
+            </p>
+          </div>
+        </div>
       </div>
-
-      <h2 id="currentDay">Monday, 10 September</h2>
-
-      <div class="second-field">
-        <span class="second-field-text">
-          <h1>
-            <span id="currentTemperature">17</span>
-            <a href="#" id="celsius">°C</a>
-            |
-            <a href="#" id="fahrenheit">°F</a>
-          </h1>
-          <h2>
-            <span id="humidity">Humidity: 51%</span>
-            <br />
-            <span id="wind">Wind: 6.55km/h</span>
-          </h2>
-        </span>
-        <span>
-          <i class="fa-solid fa-sun fa-8x fa-spin"></i>
-        </span>
-      </div>
-
-      <div class="third-field">
-        <div class="num1">
-          <i
-            class="fa-solid fa-cloud-sun fa-2x fa-beat-fade"
-            style="--fa-animation-duration: 3s"
-          ></i>
-          <p class="day">TUE</p>
-          <p class="day-temperature">14°C/18°C</p>
-        </div>
-        <div class="num2">
-          <i
-            class="fa-solid fa-cloud-showers-heavy fa-beat-fade fa-2x"
-            style="--fa-animation-duration: 3s"
-          ></i>
-          <p class="day">WED</p>
-          <p class="day-temperature">12°C/6°C</p>
-        </div>
-        <div class="num3">
-          <i
-            class="fa-solid fa-cloud-sun fa-2x fa-beat-fade"
-            style="--fa-animation-duration: 3s"
-          ></i>
-          <p class="day">THU</p>
-          <p class="day-temperature">18°C/10°C</p>
-        </div>
-        <div class="num4">
-          <i
-            class="fa-solid fa-sun fa-2x fa-beat-fade fa-2x"
-            style="--fa-animation-duration: 3s"
-          ></i>
-          <p class="day">FRI</p>
-          <p class="day-temperature">16°C/7°C</p>
-        </div>
-        <div class="num5">
-          <i
-            class="fa-solid fa-sun fa-2x fa-beat-fade fa-2x"
-            style="--fa-animation-duration: 3s"
-          ></i>
-          <p class="day">SAT</p>
-          <p class="day-temperature">23°C/11°C</p>
-        </div>
-      </div>
+    </div>
+    <div class="footer">
       <footer>
-        <p>
-          <a
-            href="https://github.com/a-zhurakovska/Project-2"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Open-sourse code</a
-          >
-          by Anastasiia Zhurakovska
-        </p>
+        <a
+          href="https://github.com/a-zhurakovska/Project-2"
+          target="_blank"
+          rel="noopener noreferrer"
+          >Open-sourse code</a
+        >
+        by Anastasiia Zhurakovska
       </footer>
     </div>
-
     <script src="src/script.js"></script>
   </body>
 </html>
