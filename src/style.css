@@ -129,9 +129,5 @@ p.day {
 .row {
   display: flex;
   justify-content: space-between;
-  justify-items: center;
-}
-
-.col-2 {
-  justify-content: center;
+  text-align: center;
 }
