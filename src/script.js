@@ -122,3 +122,27 @@ fahrenheit.addEventListener(`click`, showFahrenheitTemperature);
 
 let celsius = document.querySelector(`#celsius`);
 celsius.addEventListener(`click`, showCelsiusTemperature);
+
+function showForecast() {
+  let forecastElement = document.querySelector(`#forecast`);
+  let forecastHTML = `<div class = "row">`;
+  let days = [`THU`, `FRI`, `SAT`, `SUN`, `MON`];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-2">
+         <i class="fa-solid fa-cloud-sun fa-2x fa-beat-fade" style="--fa-animation-duration: 3s"></i>
+         <p class="day">${day}</p>
+         <p class="temperature">
+            <span class="maxForecastTemperature">14</span>°C /
+            <span class="minForecastTemperature">18</span>°C      
+          </p>
+        </div>
+      `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+showForecast();
