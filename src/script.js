@@ -41,9 +41,36 @@ function formatDate(date) {
 let h2 = document.querySelector(`#currentDay`);
 h2.textContent = formatDate(new Date());
 
-//1
+function showForecast(response) {
+  console.log(response.data);
+  let forecastElement = document.querySelector(`#forecast`);
+  let forecastHTML = `<div class = "row">`;
+  let days = [`THU`, `FRI`, `SAT`, `SUN`, `MON`];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-2">
+         <i class="fa-solid fa-cloud-sun fa-2x fa-beat-fade" style="--fa-animation-duration: 3s"></i>
+         <p class="day">${day}</p>
+         <p class="temperature">
+            <span class="maxForecastTemperature">14</span>°C /
+            <span class="minForecastTemperature">18</span>°C      
+          </p>
+        </div>
+      `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
+function getForecast(coordinates) {
+  let apiKey = `1a6432c5ca7b6f9b0bee45c98d54ea71`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(showForecast);
+}
+
 function showData(response) {
-  console.log(response);
   let cityCountry = document.querySelector(`#cityCountry h1`);
   cityCountry.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
 
@@ -67,13 +94,15 @@ function showData(response) {
 
   let describtion = document.querySelector(`#description-current-weather`);
   describtion.innerHTML = response.data.weather[0].main;
+
+  getForecast(response.data.coord);
 }
 
 function cityData(event) {
   event.preventDefault();
   let search = document.querySelector(`#search-text-input`);
   let city = search.value;
-  let apiKey = `57b2c40fdae71a6ba41d72685e3226e2`;
+  let apiKey = `1a6432c5ca7b6f9b0bee45c98d54ea71`;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(showData);
 }
@@ -122,27 +151,3 @@ fahrenheit.addEventListener(`click`, showFahrenheitTemperature);
 
 let celsius = document.querySelector(`#celsius`);
 celsius.addEventListener(`click`, showCelsiusTemperature);
-
-function showForecast() {
-  let forecastElement = document.querySelector(`#forecast`);
-  let forecastHTML = `<div class = "row">`;
-  let days = [`THU`, `FRI`, `SAT`, `SUN`, `MON`];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
-      <div class="col-2">
-         <i class="fa-solid fa-cloud-sun fa-2x fa-beat-fade" style="--fa-animation-duration: 3s"></i>
-         <p class="day">${day}</p>
-         <p class="temperature">
-            <span class="maxForecastTemperature">14</span>°C /
-            <span class="minForecastTemperature">18</span>°C      
-          </p>
-        </div>
-      `;
-  });
-  forecastHTML = forecastHTML + `</div>`;
-  forecastElement.innerHTML = forecastHTML;
-}
-
-showForecast();
