@@ -94,10 +94,14 @@ h2 {
   margin: 0 auto;
 }
 
-.choosePeriod {
+.choosePeriod,
+.choose-units-for-forecast {
   display: flex;
   justify-content: center;
   gap: 3%;
+}
+
+.choose-units-for-forecast {
   margin-bottom: 30px;
 }
 
@@ -122,11 +126,12 @@ p.day {
   margin: 7px auto;
 }
 
-.fa-solid {
-  align-items: center;
+.row {
+  display: flex;
+  justify-content: space-between;
+  justify-items: center;
 }
 
-p.temperatureOfDay {
-  text-align: center;
-  color: #063d58;
+.col-2 {
+  justify-content: center;
 }

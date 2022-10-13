@@ -26,139 +26,105 @@
   </head>
   <body>
     <div class="container">
-      <!--  -->
-      <div class="mainCode">
-        <div class="searchingLine">
-          <form id="city">
-            <input type="text" id="search-text-input" placeholder="Search" />
-            <button type="submit" id="buttonFindCity">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-          </form>
-          <button class="buttonLocation" id="buttonLocation" type="button">
-            Current location
-          </button>
-        </div>
+      <div class="weather-wrapper">
         <!--  -->
-        <div class="currentData">
-          <div class="first-short-information">
-            <span class="cityCountry" id="cityCountry">
-              <h1>Kyiv, Ukraine</h1>
+        <div class="mainCode">
+          <div class="searchingLine">
+            <form id="city">
+              <input type="text" id="search-text-input" placeholder="Search" />
+              <button type="submit" id="buttonFindCity">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
+            <button class="buttonLocation" id="buttonLocation" type="button">
+              Current location
+            </button>
+          </div>
+          <!--  -->
+          <div class="currentData">
+            <div class="first-short-information">
+              <span class="cityCountry" id="cityCountry">
+                <h1>Kyiv, Ukraine</h1>
+              </span>
+              <span>
+                <h2 id="currentDay">Monday, 10 September</h2>
+              </span>
+              <span class="lastUpdatedTime">
+                <h2>
+                  Last updated:
+                  <strong id="currentTime"> 11:17 </strong>
+                </h2>
+              </span>
+            </div>
+            <!--  -->
+            <div class="current-weather-info">
+              <h1>
+                <span id="currentTemperature">17</span>
+                <a href="#" id="celsius" class="active">°C</a>
+                |
+                <a href="#" id="fahrenheit" class="inert">°F</a>
+              </h1>
+              <h2>
+                <span id="humidity">Humidity: 51%</span>
+                <br />
+                <span id="wind">Wind: 6.55km/h</span>
+              </h2>
+            </div>
+            <div class="currentWeatherIcon">
+              <img
+                src="http://openweathermap.org/img/wn/10d@2x.png"
+                alt="weather icon"
+                id="currentWeatherIcon"
+              />
+              <h2 style="text-align: center" id="description-current-weather">
+                Cloud
+              </h2>
+            </div>
+          </div>
+          <!--  -->
+          <div class="choosePeriod">
+            <span>
+              <a href="#" id="todayWeatherData">Today</a>
             </span>
             <span>
-              <h2 id="currentDay">Monday, 10 September</h2>
+              <a href="#" id="weekWeatherData">Week</a>
             </span>
-            <span class="lastUpdatedTime">
-              <h2>
-                Last updated:
-                <strong id="currentTime"> 11:17 </strong>
-              </h2>
+          </div>
+          <div class="choose-units-for-forecast">
+            <span>
+              <a href="#" id="celsius-for-forecast">°C</a>
+            </span>
+            <span>
+              <a href="#" id="fahrenheit-for-forecast">°F</a>
             </span>
           </div>
           <!--  -->
-          <div class="current-weather-info">
-            <h1>
-              <span id="currentTemperature">17</span>
-              <a href="#" id="celsius" class="active">°C</a>
-              |
-              <a href="#" id="fahrenheit" class="inert">°F</a>
-            </h1>
-            <h2>
-              <span id="humidity">Humidity: 51%</span>
-              <br />
-              <span id="wind">Wind: 6.55km/h</span>
-            </h2>
-          </div>
-          <div class="currentWeatherIcon">
-            <img
-              src="http://openweathermap.org/img/wn/10d@2x.png"
-              alt="weather icon"
-              id="currentWeatherIcon"
-            />
-            <h2 style="text-align: center" id="description-current-weather">
-              Cloud
-            </h2>
+          <div class="weatherForecast">
+            <div class="row">
+              <div class="col-2">
+                <i
+                  class="fa-solid fa-cloud-sun fa-2x fa-beat-fade"
+                  style="--fa-animation-duration: 3s"
+                ></i>
+                <p class="day">TUE</p>
+                <p class="temperature">
+                  <span class="maxForecastTemperature">14</span>°C /
+                  <span class="minForecastTemperature">18</span>°C
+                </p>
+              </div>
+            </div>
           </div>
         </div>
-        <!--  -->
-        <div class="choosePeriod">
-          <span>
-            <a href="#" id="todayWeatherData">Today</a>
-          </span>
-          <span>
-            <a href="#" id="weekWeatherData">Week</a>
-          </span>
-        </div>
-        <!--  -->
-        <div class="weatherData">
-          <div class="card-1">
-            <i
-              class="fa-solid fa-cloud-sun fa-2x fa-beat-fade"
-              style="--fa-animation-duration: 3s"
-            ></i>
-            <p class="day">TUE</p>
-            <p class="temperature">
-              <span class="dayTemperature">14</span>°C /
-              <span class="nightTemperature">18</span>°C
-            </p>
-          </div>
-          <div class="card-2">
-            <i
-              class="fa-solid fa-cloud-showers-heavy fa-beat-fade fa-2x"
-              style="--fa-animation-duration: 3s"
-            ></i>
-            <p class="day">WED</p>
-            <p class="temperature">
-              <span class="dayTemperature">14</span>°C /
-              <span class="nightTemperature">18</span>°C
-            </p>
-          </div>
-          <div class="card-3">
-            <i
-              class="fa-solid fa-cloud-sun fa-2x fa-beat-fade"
-              style="--fa-animation-duration: 3s"
-            ></i>
-            <p class="day">THU</p>
-            <p class="temperature">
-              <span class="dayTemperature">14</span>°C /
-              <span class="nightTemperature">18</span>°C
-            </p>
-          </div>
-          <div class="card-4">
-            <i
-              class="fa-solid fa-sun fa-2x fa-beat-fade fa-2x"
-              style="--fa-animation-duration: 3s"
-            ></i>
-            <p class="day">FRI</p>
-            <p class="temperature">
-              <span class="dayTemperature">14</span>°C /
-              <span class="nightTemperature">18</span>°C
-            </p>
-          </div>
-          <div class="card-5">
-            <i
-              class="fa-solid fa-sun fa-2x fa-beat-fade fa-2x"
-              style="--fa-animation-duration: 3s"
-            ></i>
-            <p class="day">SAT</p>
-            <p class="temperature">
-              <span class="dayTemperature">14</span>°C /
-              <span class="nightTemperature">18</span>°C
-            </p>
-          </div>
-        </div>
+        <small>
+          <a
+            href="https://github.com/a-zhurakovska/Project-2"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Open-sourse code</a
+          >
+          by Anastasiia Zhurakovska
+        </small>
       </div>
-    </div>
-    <div class="footer">
-      <footer>
-        <a
-          href="https://github.com/a-zhurakovska/Project-2"
-          target="_blank"
-          rel="noopener noreferrer"
-          >Open-sourse code</a
-        >
-        by Anastasiia Zhurakovska
-      </footer>
     </div>
     <script src="src/script.js"></script>
   </body>
