@@ -1,9 +1,8 @@
 var date = new Date();
 let dataHours = (date.getHours() < 10 ? "0" : "") + date.getHours();
 let dataMinutes = (date.getMinutes() < 10 ? "0" : "") + date.getMinutes();
-document.getElementById(
-  "currentTime"
-).innerHTML = `${dataHours}:${dataMinutes}`;
+let updatedTime = `${dataHours}:${dataMinutes}`;
+document.getElementById("currentTime").innerHTML = updatedTime;
 
 function formatDate(date) {
   let days = [
@@ -66,12 +65,12 @@ function showForecast(response) {
               />
          <p class="day">${formatDay(forecastDay.dt)}</p>
          <p class="temperature">
-            <span class="maxForecastTemperature">${Math.round(
+            <span class="maxForecastTemperature"> ${Math.round(
               forecastDay.temp.max
-            )}</span>°C /
+            )} / </span>
             <span class="minForecastTemperature">${Math.round(
               forecastDay.temp.min
-            )}</span>°C      
+            )}</span>     
           </p>
         </div>
       `;
@@ -87,6 +86,14 @@ function getForecast(coordinates) {
   axios.get(apiUrl).then(showForecast);
 }
 
+function changeVideoBackground(response) {
+  let lowerCaseWord = response.charAt(0).toLowerCase() + response.slice(1);
+  console.log(lowerCaseWord);
+  document.getElementById(
+    `background-video`
+  ).src = `src/videos/${lowerCaseWord}.mp4`;
+}
+
 function showData(response) {
   let cityCountry = document.querySelector(`#cityCountry h1`);
   cityCountry.innerHTML = `${response.data.name}, ${response.data.sys.country}`;
@@ -100,7 +107,7 @@ function showData(response) {
   humidity.innerHTML = `Humidity: ${response.data.main.humidity}%`;
 
   let wind = document.querySelector(`#wind`);
-  wind.innerHTML = `Wind: ${response.data.wind.speed}km/h`;
+  wind.innerHTML = `Wind: ${response.data.wind.speed} m/h`;
 
   let iconCurrentWeather = document.querySelector(`#currentWeatherIcon`);
   iconCurrentWeather.setAttribute(
@@ -113,6 +120,7 @@ function showData(response) {
   describtion.innerHTML = response.data.weather[0].main;
 
   getForecast(response.data.coord);
+  changeVideoBackground(response.data.weather[0].main);
 }
 
 function cityData(event) {

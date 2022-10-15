@@ -9,8 +9,20 @@ body {
 }
 .mainCode {
   width: 800px;
-  border: 1px solid gray;
+  height: 638px;
   padding: 30px;
+}
+
+.weather-video-wrapper {
+  position: relative;
+}
+
+video {
+  width: 800px;
+  height: 638px;
+  position: fixed;
+  object-fit: cover;
+  z-index: -1;
 }
 
 #city {
@@ -59,27 +71,27 @@ body {
 .current-weather-info h1 {
   font-weight: 500;
   font-size: 38px;
-  color: #063d58;
+  color: #f2fafe;
   margin-bottom: 10px;
 }
 
 h2 {
   font-weight: 300;
   font-size: 20px;
-  color: #063d58;
+  color: #c6d1d8;
   margin: 0px;
 }
 
 .active,
 .active:hover {
-  color: #063d58;
+  color: #f2fafe;
   text-decoration: none;
   cursor: default;
 }
 
 .inert,
 .inert:hover {
-  color: #9abbcf;
+  color: #748998af;
   text-decoration: none;
   cursor: pointer;
 }
@@ -107,7 +119,7 @@ h2 {
 
 #todayWeatherData,
 #weekWeatherData {
-  color: #063d58;
+  color: #c6d1d8;
   text-decoration: none;
   font-weight: 500;
 }
@@ -124,6 +136,14 @@ p.day {
   color: aliceblue;
   border-radius: 30px;
   margin: 7px auto;
+}
+
+.maxForecastTemperature {
+  color: #f2fafe;
+}
+
+.minForecastTemperature {
+  color: #c6d1d8;
 }
 
 .row {
