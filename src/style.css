@@ -64,7 +64,7 @@ video {
 .currentData {
   display: flex;
   justify-content: space-between;
-  margin: 50px auto 120px auto;
+  margin: 50px auto 200px auto;
 }
 
 .cityCountry h1,
@@ -104,24 +104,6 @@ h2 {
   width: 80px;
   display: block;
   margin: 0 auto;
-}
-
-.choosePeriod,
-.choose-units-for-forecast {
-  display: flex;
-  justify-content: center;
-  gap: 3%;
-}
-
-.choose-units-for-forecast {
-  margin-bottom: 30px;
-}
-
-#todayWeatherData,
-#weekWeatherData {
-  color: #c6d1d8;
-  text-decoration: none;
-  font-weight: 500;
 }
 
 .weatherData {
